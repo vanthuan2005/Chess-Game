@@ -1,0 +1,27 @@
+THEM VAO AndroidManifest.xml
+
+1) Them permission nay TRUC TIEP ben trong <manifest ...>, nam ngoai <application>:
+
+<uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+2) Them receiver nay BEN TRONG <application ...>:
+
+<receiver
+    android:name=".DailyNotificationReceiver"
+    android:enabled="true"
+    android:exported="false" />
+
+3) Thay SplashActivity.java hien tai bang file SplashActivity.java moi.
+
+4) Copy 2 file moi vao:
+app/src/main/java/com/example/chessgame/
+
+- DailyNotificationManager.java
+- DailyNotificationReceiver.java
+
+CACH HOAT DONG
+- Lan dau mo app, Android 13+ se hoi quyen gui thong bao.
+- App hen thong bao hang ngay luc 10:00.
+- Neu luc dang ky da qua 10:00, lan thong bao dau tien se la 10:00 ngay hom sau.
+- Bam vao notification se mo Chess Game.
+- AlarmManager setInexactRepeating co the bi Android dich vai phut do toi uu pin.
